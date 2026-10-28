@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'UMBRA-proyecto-Android.zip'
+      - 'UMBRA-GitHub-descarga.zip'
       - '.github/workflows/build.yml'
 
 permissions:
@@ -26,10 +26,10 @@ jobs:
         with:
           gradle-version: '8.9'
 
-      - name: Extract Android project
-        run: unzip UMBRA-proyecto-Android.zip
+      - name: Extract project
+        run: unzip UMBRA-GitHub-descarga.zip
 
-      - name: Compile APK
+      - name: Build APK
         working-directory: UMBRA-Android
         run: gradle --no-daemon assembleDebug
 
